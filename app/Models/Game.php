@@ -11,9 +11,16 @@ class Game extends Model
 
     protected $fillable = [
         'GameTitle',
-        'Genre',
+        'Developer',
         'Publisher',
         'PublishDate',
-        'Stock'
+        'Stock',
+        'image',
+        'genre_id'
     ];
+
+    public function genre()
+    {
+        return $this->belongsTo(Genre::class);
+    }
 }
